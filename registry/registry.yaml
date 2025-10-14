@@ -1,0 +1,69 @@
+- name: Constractionapp
+  type: Web
+  phase: Prod
+  owner: ToddWolf
+  signal: RecruiterFacing
+  resourceGroup: GravityBinaryRG
+  location: East US 2
+  ip: 20.49.97.26
+  sku: Free
+  tags:
+    - CapsuleIdentity: Validator
+    - Type: Web
+    - Phase: Prod
+    - Owner: ToddWolf
+    - Signal: RecruiterFacing
+- name: Constractionapp-Insights
+  type: Monitoring
+  phase: Prod
+  owner: ToddWolf
+  signal: RecruiterFacing
+  resourceGroup: GravityBinaryRG
+  location: East US 2
+  tags:
+    - CapsuleIdentity: Validator
+    - Type: Monitoring
+    - Phase: Prod
+    - Owner: ToddWolf
+    - Signal: RecruiterFacing
+- name: Constractionapp-Insights
+  type: Monitoring
+  phase: Prod
+  owner: ToddWolf
+  signal: RecruiterFacing
+  resourceGroup: GravityBinaryRG
+  location: East US 2
+  tags:
+    - CapsuleIdentity: Validator
+    - Type: Monitoring
+    - Phase: Prod
+    - Owner: ToddWolf
+    - Signal: RecruiterFacing
+- name: Constractionapp-Insights
+  type: Monitoring
+  phase: Prod
+  owner: ToddWolf
+  signal: RecruiterFacing
+  resourceGroup: GravityBinaryRG
+  location: East US 2
+  tags:
+    - CapsuleIdentity: Validator
+    - Type: Monitoring
+    - Phase: Prod
+    - Owner: ToddWolf
+    - Signal: RecruiterFacing
+- name: Constractionapp-DNS
+  type: Routing
+  phase: Prod
+  owner: ToddWolf
+  signal: RecruiterFacing
+  resourceGroup: GravityBinaryRG
+  location: East US 2
+  ip: 20.49.97.26
+  hostname: vscgravity.com
+  tags:
+    - CapsuleIdentity: Validator
+    - Type: Routing
+    - Phase: Prod
+    - Owner: ToddWolf
+    - Signal: RecruiterFacing
