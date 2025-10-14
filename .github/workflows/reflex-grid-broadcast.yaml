@@ -1,0 +1,66 @@
+name: Reflex Grid Broadcast
+
+on:
+  issues:
+    types: [labeled]
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  reflex-collapse:
+    if: contains(github.event.issue.labels.*.name, 'reflex-collapse')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collapse reflex capsule
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("?? Reflex collapse triggered.")
+
+  dispatch-uce:
+    if: contains(github.event.issue.labels.*.name, 'dispatch-uce')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch to UCE
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("?? External dispatch to UCE triggered.")
+
+  validator-submission:
+    if: github.event_name == 'issues' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm validator submission
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("? Validator submission confirmed.")
+
+  grid-broadcast:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Broadcast grid update
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("?? Grid-wide broadcast triggered on push to main.")
+
+  build-log-capsule:
+    if: github.event_name == 'workflow_run'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo build log capsule
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("?? Build log capsule echo triggered.")
