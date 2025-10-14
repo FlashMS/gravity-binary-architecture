@@ -2,7 +2,7 @@ name: Reflex Grid Broadcast
 
 on:
   issues:
-    types: [labeled]
+    types: [labeled, closed]
   push:
     branches: [main]
   workflow_run:
@@ -33,7 +33,7 @@ jobs:
             console.log("?? External dispatch to UCE triggered.")
 
   validator-submission:
-    if: github.event_name == 'issues' && github.event.action == 'closed'
+    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
       - name: Confirm validator submission
