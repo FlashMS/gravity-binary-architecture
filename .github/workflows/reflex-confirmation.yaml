@@ -1,0 +1,19 @@
+name: Reflex Confirmation
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  confirm:
+    if: contains(github.event.issue.labels.*.name, 'reflex-confirmed')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo reflex confirmation
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const message = `? Reflex confirmed for issue #${issue.number}: ${issue.title}`;
+            console.log(message);
