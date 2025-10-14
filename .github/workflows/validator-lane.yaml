@@ -1,0 +1,22 @@
+name: Validator Lane Capsule
+
+on:
+  push:
+    branches:
+      - validator/**
+
+jobs:
+  validator-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo validator lane metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Branch: ${{ github.ref }}"
+          echo "?? Commit: ${{ github.event.head_commit.message }}"
+      - name: Inject validator review badge
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("??? Validator review badge injected.")
