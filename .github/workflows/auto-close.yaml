@@ -1,0 +1,16 @@
+name: Auto Close Issues
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  close:
+    if: contains(github.event.issue.labels.*.name, 'invalid') || contains(github.event.issue.labels.*.name, 'wontfix')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close issue
+        uses: peter-evans/close-issue@v3
+        with:
+          comment: |
+            This issue has been closed automatically based on its label.
