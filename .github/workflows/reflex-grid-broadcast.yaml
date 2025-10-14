@@ -22,9 +22,7 @@ jobs:
       - name: Collapse reflex capsule
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            console.log("?? Reflex collapse@'
+          github@'
 name: Reflex Grid Broadcast
 
 on:
@@ -113,3 +111,22 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             console.log("?? Build log capsule echo triggered.")
+
+  external-webhook:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo webhook dispatch metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Commit: ${{ github.event.head_commit.message }}"
+      - name: Dispatch to external endpoint
+        run: |
+          curl -X POST https://your-endpoint.example.com/webhook `
+            -H "Content-Type: application/json" `
+            -d '{ 
+              "repo": "${{ github.repository }}", 
+              "commit": "${{ github.event.head_commit.message }}", 
+              "ref": "${{ github.ref }}", 
+              "timestamp": "${{ github.event.head_commit.timestamp }}" 
+            }'
