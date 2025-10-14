@@ -1,0 +1,32 @@
+name: Tier Invitation + Badge Injection
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  tier-invite:
+    if: contains(github.event.issue.labels.*.name, 'tier-invite')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invite contributor to tier
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const message = `?? Tier invitation triggered for issue #${issue.number}: ${issue.title}`;
+            console.log(message);
+
+  badge-inject:
+    if: contains(github.event.issue.labels.*.name, 'badge-inject')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inject badge
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const badge = `[![Validator Capsule](https://img.shields.io/badge/validator-capsule-blue)]`;
+            console.log(`?? Badge injected for issue #${issue.number}`);
