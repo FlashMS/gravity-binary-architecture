@@ -1,0 +1,19 @@
+name: Validator Review Dispatch
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  review:
+    if: contains(github.event.issue.labels.*.name, 'validator-review')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch validator review
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const message = `Validator review triggered for issue #${issue.number}: ${issue.title}`;
+            console.log(message);
