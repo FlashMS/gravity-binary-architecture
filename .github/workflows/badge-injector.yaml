@@ -1,0 +1,25 @@
+name: Dynamic Badge Injection
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  inject-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Inject badge into homepage
+        run: |
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          sed -i "/<div id=\\"validator-badge\\">/,/<\\/div>/c\\<div id=\\"validator-badge\\"><span class=\\"badge\\">??? Capsule Status: ${COMMIT_MSG}</span></div>" site/index.html
+
+      - name: Commit badge update
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add site/index.html
+          git commit -m "Inject dynamic badge: ${COMMIT_MSG}"
+          git push origin main
