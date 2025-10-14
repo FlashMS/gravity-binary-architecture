@@ -14,6 +14,38 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'reflex-collapse')
     runs-on: ubuntu-latest
     steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Labels: ${{ toJson(github.event.issue.labels) }}"
+          echo "?? Issue Title: ${{ github.event.issue.title }}"
+      - name: Collapse reflex capsule
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("?? Reflex collapse@'
+name: Reflex Grid Broadcast
+
+on:
+  issues:
+    types: [labeled, closed]
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  reflex-collapse:
+    if: contains(github.event.issue.labels.*.name, 'reflex-collapse')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Labels: ${{ toJson(github.event.issue.labels) }}"
+          echo "?? Issue Title: ${{ github.event.issue.title }}"
       - name: Collapse reflex capsule
         uses: actions/github-script@v6
         with:
@@ -25,6 +57,11 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'dispatch-uce')
     runs-on: ubuntu-latest
     steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Labels: ${{ toJson(github.event.issue.labels) }}"
+          echo "?? Issue Title: ${{ github.event.issue.title }}"
       - name: Dispatch to UCE
         uses: actions/github-script@v6
         with:
@@ -36,6 +73,10 @@ jobs:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Issue Title: ${{ github.event.issue.title }}"
       - name: Confirm validator submission
         uses: actions/github-script@v6
         with:
@@ -47,6 +88,10 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Commit Message: ${{ github.event.head_commit.message }}"
       - name: Broadcast grid update
         uses: actions/github-script@v6
         with:
@@ -58,11 +103,13 @@ jobs:
     if: github.event_name == 'workflow_run'
     runs-on: ubuntu-latest
     steps:
+      - name: Echo trigger metadata
+        run: |
+          echo "?? Trigger: ${{ github.event_name }}"
+          echo "?? Workflow: ${{ github.event.workflow_run.name }}"
       - name: Echo build log capsule
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             console.log("?? Build log capsule echo triggered.")
-
-
