@@ -1,0 +1,40 @@
+name: Issue Reflex Bundle
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  assign:
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-assign issue
+        uses: pozil/auto-assign-issue@v1
+        with:
+          assignees: ToddWolf
+
+  label:
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-label issue
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: |
+            validator-capsule
+            needs-triage
+
+  dispatch-review:
+    if: contains(github.event.issue.labels.*.name, 'validator-review')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch validator review
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const message = `Validator review triggered for issue #${issue.number}: ${issue.title}`;
+            console.log(message);
