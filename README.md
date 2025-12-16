@@ -71,6 +71,8 @@ Subprojects (Business-facing)
 - KalshiCapsule (placeholder)
 - DaaS (placeholder)
 - UCE
+
+
 Capsules (Infrastructure parts)
 TrustBeacon · TrustEcho · TrustIndex · TrustPropagation · TrustSeal · CapsuleRegistry · CapsuleBundle · CapsuleHeartbeat · CapsuleIndex · CapsuleTagsIndex · CapsuleReport · ValidatorAudit · ValidatorExpansion · ValidatorMirror · ValidatorOverlay · ValidatorTags · RecruiterCapsule · RecruiterRegistry · RecruiterExport · RecruiterOverlay · ResumeCapsule · BusinessOnboardingCapsule · SOPCapsule · ComplianceCapsule · GravityDomainBinding · GravityDomainCert · GravityDomainPatch · GravityImagePatch
 
