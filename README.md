@@ -70,6 +70,7 @@ Subprojects (Business-facing)
 - ChrisBusinessCapsule (placeholder)
 - KalshiCapsule (placeholder)
 - DaaS (placeholder)
+- AI Insurance Agent
 - UCE
 
 
