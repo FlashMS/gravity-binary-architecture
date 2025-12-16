@@ -77,5 +77,3 @@ TrustBeacon · TrustEcho · TrustIndex · TrustPropagation · TrustSeal · Capsu
 Author
 Todd Wolf · Architect of Reflex Logic · Gravity Binary LLC
 
-✅ This version keeps all your narrative detail intact, integrates the Project Structure cleanly after “Dispatch,” and removes duplication. It’s long, expressive, and recruiter‑ready without looking stitched together.
-Would you like me to also add a table of contents at the very top so evaluators can jump directly to “Reflex Audit Capsule,” “Project Structure,” or “Featured Capsules” without scrolling?
