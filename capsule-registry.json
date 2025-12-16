@@ -1,0 +1,34 @@
+{
+  "project": "Gravity Binary Architecture",
+  "subprojects": [
+    "GravityShield",
+    "GravityAudit",
+    "GravityWallet",
+    "GravityValidator",
+    "WebEditorCapsule",
+    "ConstructionAppCapsule",
+    "FreightMarketCapsule",
+    "ChrisBusinessCapsule",
+    "KalshiCapsule",
+    "DaaS",
+    "UCE"
+  ],
+  "capsules": [
+    "TrustBeacon",
+    "TrustEcho",
+    "TrustIndex",
+    "TrustPropagation",
+    "TrustSeal",
+    "CapsuleRegistry",
+    "CapsuleBundle",
+    "CapsuleHeartbeat",
+    "CapsuleIndex",
+    "CapsuleTagsIndex",
+    "CapsuleReport",
+    "ValidatorAudit",
+    "ValidatorExpansion",
+    "ValidatorMirror",
+    "ValidatorOverlay",
+    "ValidatorTags"
+  ]
+}
