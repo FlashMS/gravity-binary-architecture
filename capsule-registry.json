@@ -29,6 +29,18 @@
     "ValidatorExpansion",
     "ValidatorMirror",
     "ValidatorOverlay",
-    "ValidatorTags"
+    "ValidatorTags",
+    "RecruiterCapsule",
+    "RecruiterRegistry",
+    "RecruiterExport",
+    "RecruiterOverlay",
+    "ResumeCapsule",
+    "BusinessOnboardingCapsule",
+    "SOPCapsule",
+    "ComplianceCapsule",
+    "GravityDomainBinding",
+    "GravityDomainCert",
+    "GravityDomainPatch",
+    "GravityImagePatch"
   ]
 }
