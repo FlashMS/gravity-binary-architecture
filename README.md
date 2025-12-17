@@ -62,16 +62,16 @@ Project
 Subprojects (Business-facing)
 - GravityShield
 - GravityAudit
-- GravityWallet
+- GravitAIyWallet
 - GravityValidator
 - WebEditorCapsule
 - ConstructionAppCapsule (placeholder)
 - FreightMarketCapsule (placeholder)
-- ChrisBusinessCapsule (placeholder)
+- ChrisBusinessCapsule International Code Council (placeholder)
 - KalshiCapsule (placeholder)
 - DaaS (placeholder)
 - AI Insurance Agent
-- UCE
+- UCE Universal Context Engine
 
 
 Capsules (Infrastructure parts)
