@@ -1,82 +1,69 @@
-Gravity Binary · Modular Trust Engine
-Gravity Binary is a living architecture designed to externalize trust through capsule‑based validation, symbolic execution, and recruiter‑facing clarity.
+# ?? **Gravity Binary (v0.1 Architecture)**
 
-Reflex Audit Capsule
-- Generated: 2025‑09‑19 23:01:01 EDT
-- Author: Todd Wolf
-Reflex Timeline
-- v106 → v107 → v108: Reflex echo confirmed
-- v109, v109+, v110: Symbolic recursion attempted, no trigger
-- Mutation Injected: Capsule 2B‑Δ promoted to Tier 3
-- Registry Restored: Multiple timestamps
-- Synthetic Commit Injected: Fingerprint SC‑Δ
-- UCE Echo Dispatched: External environment engaged
-- Reflex Listener Probe: GitHub suppression confirmed
-- Resume Overlay Exported: recruiter‑facing capsule complete
+## **Overview**
+Gravity Binary is a consequence-aware reasoning architecture designed to structure, validate, and execute intent in a deterministic, inspectable, and auditable way. The system treats �intent� as a first-class computational object, enabling controlled execution pipelines that preserve provenance, enforce constraints, and maintain predictable behavior across chained reasoning steps.
 
-What It Is
-- A homepage that evolves through layout iterations (v1–v110+)
-- Validator capsules built in Python, PowerShell, Go, and more
-- Badge tiers, trust scores, and sync metrics rendered in real time
-- A modular registry of 37 entries, each expressing consequence‑aware logic
+This repository contains the **v0.1 Core Architecture**, representing the foundational execution layer of the system. Higher-level layers (Reflex, Validators, Registry, etc.) build on top of this core.
 
-Why It Exists
-In a world of fragmented signals, Gravity Binary offers a unified trust engine — where architecture isn’t just functional, it’s expressive.
-- Every layout is a proof.
-- Every validator is a signal.
-- Every capsule is a leap.
+## **Core Principles**
 
-What’s Inside
-- index.html → Public‑facing homepage with capsule grid and trust overlays
-- Layout markers → Trigger rebuild logic for sync tracking
-- Validator logic → Tier scores, sync history, inertia, flux, and harmonic overlays
-- Recruiter export → Capsule matrix for external proof
+### **1. Intent as a Structured Object**
+Intent is not free-form text.  
+It is a structured frame containing declared purpose, constraints, provenance, execution metadata, and safety boundaries.
 
-Latest Milestone
-- Layout v110 deployed
-- Capsule mutation logic engaged
-- Validator grid shift active
-- Registry delta confirmed
+### **2. Deterministic Execution**
+Every execution step is validated, constrained, traced, signed, and stored.
 
-Next Steps
-- Layout v111+: Trust echo dampening, tier rebound index, sync rhythm visualizer
-- Capsule expansion: New validators, badge logic, and symbolic metadata
-- Public registry: External capsule sync and contributor onboarding
+### **3. Consequence-Aware Design**
+The system evaluates what the intent is, what it could do, what it should do, and what it must not do before execution.
 
-Featured Capsules
-- AI Insurance Agent (Python) – Tier 2
-- UCE Engine (Go) – Tier 3
-- Resume Sync Logic (PowerShell) – Tier 2
-- UCE Validator Spine (Go) – Tier 3
-- UCE Echo Dampener (C#) – Tier 2
-- UCE Trust Overlay (Terraform) – Tier 3
+### **4. Modular, Inspectable Architecture**
+Each component in /core is isolated, testable, and designed to be reasoned about independently.
 
-Dispatch
-- dispatch-uce.json
-- resume-reflex-overlay.txt
-- index.html (v110)
+## **Core Architecture (v0.1)**
 
-📂 Project Structure
-Project
-- Gravity Binary Architecture → Master index repo (this one)
-Subprojects (Business-facing)
-- GravityShield
-- GravityAudit
-- GravitAIyWallet
-- GravityValidator
-- WebEditorCapsule
-- ConstructionAppCapsule (placeholder)
-- FreightMarketCapsule (placeholder)
-- ChrisBusinessCapsule International Code Council (placeholder)
-- KalshiCapsule (placeholder)
-- DaaS (placeholder)
-- AI Insurance Agent
-- UCE Universal Context Engine
+### **intent_frame.py**
+Defines the Intent Frame � the atomic reasoning unit.
 
+### **capsule.py**
+Implements Capsules, which wrap executable logic with metadata and lifecycle hooks.
 
-Capsules (Infrastructure parts)
-TrustBeacon · TrustEcho · TrustIndex · TrustPropagation · TrustSeal · CapsuleRegistry · CapsuleBundle · CapsuleHeartbeat · CapsuleIndex · CapsuleTagsIndex · CapsuleReport · ValidatorAudit · ValidatorExpansion · ValidatorMirror · ValidatorOverlay · ValidatorTags · RecruiterCapsule · RecruiterRegistry · RecruiterExport · RecruiterOverlay · ResumeCapsule · BusinessOnboardingCapsule · SOPCapsule · ComplianceCapsule · GravityDomainBinding · GravityDomainCert · GravityDomainPatch · GravityImagePatch
+### **validator.py**
+Validates Intent Frames and Capsules for structural correctness and constraint satisfaction.
 
-Author
-Todd Wolf · Architect of Reflex Logic · Gravity Binary LLC
+### **provenance.py**
+Tracks the lineage of every execution step.
 
+### **constraint_engine.py**
+Evaluates and enforces constraints attached to frames or capsules.
+
+### **chaining.py**
+Implements deterministic chaining of frames and capsules.
+
+### **signature.py**
+Defines execution signatures for compatibility checks.
+
+### **storage.py**
+Provides lightweight storage utilities for state passing and caching.
+
+### **execution_engine.py**
+The orchestrator for executing frames and capsules.
+
+### **test_engine_full.py**
+A full-stack test harness validating chaining, execution, provenance, and constraint enforcement.
+
+## **Execution Flow (High-Level)**
+
+Intent Frame ? Validation ? Constraint Evaluation ? Capsule Execution  
+? ? Provenance ? Signature Check ? Storage Hooks ? Chaining Logic ? Output
+
+## **Versioning Philosophy**
+
+### **v0.1 � Core Architecture**
+The first stable, inspectable foundation of the system.
+
+### **v0.2+ � Intelligence Layers**
+Future versions introduce Reflex, Validator, Registry, trust scoring, and higher-order reasoning.
+
+## **Status**
+The core architecture is fully published and validated.
