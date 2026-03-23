@@ -1,7 +1,7 @@
-# ?? **Gravity Binary (v0.1 Architecture)**
+ **Gravity Binary (v0.1 Architecture)**
 
 ## **Overview**
-Gravity Binary is a consequence-aware reasoning architecture designed to structure, validate, and execute intent in a deterministic, inspectable, and auditable way. The system treats ìintentî as a first-class computational object, enabling controlled execution pipelines that preserve provenance, enforce constraints, and maintain predictable behavior across chained reasoning steps.
+Gravity Binary is a consequence-aware reasoning architecture designed to structure, validate, and execute intent in a deterministic, inspectable, and auditable way. The system treats ‚Äúintent‚Äù as a first-class computational object, enabling controlled execution pipelines that preserve provenance, enforce constraints, and maintain predictable behavior across chained reasoning steps.
 
 This repository contains the **v0.1 Core Architecture**, representing the foundational execution layer of the system. Higher-level layers (Reflex, Validators, Registry, etc.) build on top of this core.
 
@@ -23,7 +23,7 @@ Each component in /core is isolated, testable, and designed to be reasoned about
 ## **Core Architecture (v0.1)**
 
 ### **intent_frame.py**
-Defines the Intent Frame ó the atomic reasoning unit.
+Defines the Intent Frame ‚Äî the atomic reasoning unit.
 
 ### **capsule.py**
 Implements Capsules, which wrap executable logic with metadata and lifecycle hooks.
@@ -59,10 +59,10 @@ Intent Frame ? Validation ? Constraint Evaluation ? Capsule Execution
 
 ## **Versioning Philosophy**
 
-### **v0.1 ó Core Architecture**
+### **v0.1 ‚Äî Core Architecture**
 The first stable, inspectable foundation of the system.
 
-### **v0.2+ ó Intelligence Layers**
+### **v0.2+ ‚Äî Intelligence Layers**
 Future versions introduce Reflex, Validator, Registry, trust scoring, and higher-order reasoning.
 
 ## **Status**
